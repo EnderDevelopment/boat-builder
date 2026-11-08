@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Driftwood | Boat Builder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#scene" aria-label="Driftwood home">
+        <span class="brand-mark" aria-hidden="true">⌁</span>
+        <span>DRIFTWOOD</span>
+      </a>
+      <div class="status"><span class="status-dot"></span><span id="statusText">Ready to launch</span></div>
+    </header>
+
+    <section class="workspace" id="scene" aria-label="Boat scene">
+      <div class="sky-glow" aria-hidden="true"></div>
+      <div class="sun" aria-hidden="true"></div>
+      <div class="stars" aria-hidden="true">✦　·　✧　　·　✦</div>
+      <div class="scene-copy">
+        <p class="eyebrow">Open water / 01</p>
+        <h1 id="boatTitle">Small craft,<br><em>wide horizon.</em></h1>
+        <p class="subcopy">Set the trim, point the bow, and let the water do the rest.</p>
+      </div>
+
+      <div class="boat-stage" id="boatStage">
+        <div class="wake wake-one"></div>
+        <div class="wake wake-two"></div>
+        <div class="boat" id="boat" aria-label="A small sailboat">
+          <div class="mast"></div>
+          <div class="sail sail-main" id="sailMain"></div>
+          <div class="sail sail-jib" id="sailJib"></div>
+          <div class="rigging"></div>
+          <div class="hull"><span class="hull-line"></span></div>
+          <div class="deck"></div>
+          <div class="cabin"><span></span></div>
+          <div class="rudder" id="rudderVisual"></div>
+        </div>
+      </div>
+
+      <div class="water water-back" aria-hidden="true"></div>
+      <div class="water water-front" aria-hidden="true"></div>
+      <div class="horizon-line" aria-hidden="true"></div>
+    </section>
+
+    <aside class="control-panel" aria-label="Boat controls">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">Control deck</p>
+          <h2>Make it yours</h2>
+        </div>
+        <span class="boat-id">DW-07</span>
+      </div>
+
+      <label class="field-label" for="boatName">Boat name</label>
+      <div class="name-input">
+        <input id="boatName" type="text" maxlength="20" value="Driftwood" autocomplete="off">
+        <span aria-hidden="true">↵</span>
+      </div>
+
+      <div class="control-group">
+        <div class="control-label"><span>Sail</span><output id="sailOutput">Open</output></div>
+        <div class="segmented" role="group" aria-label="Sail setting">
+          <button class="segment active" data-sail="open" type="button">Open</button>
+          <button class="segment" data-sail="reefed" type="button">Reefed</button>
+          <button class="segment" data-sail="down" type="button">Down</button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="control-label"><label for="rudder">Rudder</label><output id="rudderOutput">0°</output></div>
+        <input id="rudder" type="range" min="-35" max="35" value="0" step="1">
+        <div class="range-scale"><span>Port</span><span>Center</span><span>Starboard</span></div>
+      </div>
+
+      <div class="panel-footer">
+        <button class="launch-button" id="launchButton" type="button"><span aria-hidden="true">↗</span><span>Launch boat</span></button>
+        <button class="theme-button" id="themeButton" type="button" aria-label="Toggle night mode" title="Toggle night mode"><span aria-hidden="true">☼</span></button>
+      </div>
+    </aside>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
